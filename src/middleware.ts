@@ -1,5 +1,8 @@
 import { defineMiddleware } from 'astro:middleware';
 
+// www → apex is enforced at the Cloudflare edge (Dynamic Redirect on zone
+// skyphusion.net). Fully static Workers Assets deploys do not run this Worker
+// middleware for prerendered HTML, so do not rely on it alone for host redirects.
 export const onRequest = defineMiddleware((context, next) => {
   const url = new URL(context.request.url);
 
