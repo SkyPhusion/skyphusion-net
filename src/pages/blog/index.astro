@@ -9,8 +9,8 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 <BaseLayout
-  title="Blog, skyphusion.net"
-  description="All posts on skyphusion.net"
+  title="Engineering blog: Vivijure, Postern, Prism, Cloudflare"
+  description="Posts on self-hosted AI film (Vivijure), email for agents (Postern), multimodal AI (Prism), security tooling, and Cloudflare Workers infrastructure from Skyphusion Labs."
   jsonLd={blogJsonLd(site)}
 >
   <h1>Blog</h1>

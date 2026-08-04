@@ -33,6 +33,8 @@ export const PRODUCT_URLS = [
   'https://github.com/skyphusion-labs/slate',
   'https://github.com/skyphusion-labs/SidVicious_exe',
   'https://github.com/skyphusion-labs/common-thread',
+  'https://github.com/skyphusion-labs/security-audit',
+  'https://github.com/skyphusion-labs/search-mcp',
   'https://github.com/skyphusion-labs/vivijure-backend',
   'https://github.com/skyphusion-labs/vivijure-local-12gb',
   'https://github.com/skyphusion-labs/vivijure-local-16gb',
@@ -44,19 +46,28 @@ export const PRODUCT_URLS = [
   'https://github.skyphusion.net',
   'https://vivijure.com',
   'https://demo.vivijure.com',
+  'https://play.skyphusion.org',
+  'https://demo.posternonline.com',
   'https://hollow.skyphusion.org',
   'https://dustfall.skyphusion.org',
   'https://common-thread.skyphusion.org',
 ] as const;
 
+/** Normalize Astro.site (often trailing slash) so joins never produce //path. */
+export function siteOrigin(site: URL | string): string {
+  const raw = typeof site === 'string' ? site : site.href;
+  return raw.replace(/\/+$/, '') || raw;
+}
+
 export function canonicalUrl(pathname: string, site: URL | string): string {
-  const base = typeof site === 'string' ? site : site.origin;
-  return new URL(pathname, base).href;
+  const base = siteOrigin(site);
+  const path = pathname.startsWith('/') ? pathname : `/${pathname}`;
+  return new URL(path, `${base}/`).href;
 }
 
 export function absoluteUrl(path: string, site: string): string {
   if (path.startsWith('http://') || path.startsWith('https://')) return path;
-  return new URL(path, site).href;
+  return new URL(path, `${siteOrigin(site)}/`).href;
 }
 
 export function tagPath(tag: string): string {
@@ -136,17 +147,18 @@ export function blogPostingJsonLd({
 }
 
 export function webSiteJsonLd(site: string) {
+  const origin = siteOrigin(site);
   return {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: SITE_NAME,
-    url: site,
+    url: `${origin}/`,
     description:
-      'Engineering blog by Conrad Rockenhaus: free AGPL open source AI film studio (Vivijure), Cloudflare Workers infrastructure, and self-hosted systems from Skyphusion Labs. Public Michigan court record at rockenhaus.net.',
+      'Engineering blog by Conrad Rockenhaus: free AGPL open source AI film studio (Vivijure), Postern mailbox for agents, Cloudflare Workers infrastructure, and self-hosted systems from Skyphusion Labs.',
     author: {
       '@type': 'Person',
       name: AUTHOR_NAME,
-      url: `${site}/about/`,
+      url: `${origin}/about/`,
       sameAs: [...SOCIAL_PROFILES, ...PRODUCT_URLS],
     },
     publisher: {
@@ -159,33 +171,37 @@ export function webSiteJsonLd(site: string) {
         'https://github.skyphusion.net',
         'https://skyphusion.net',
         'https://vivijure.com',
+        'https://play.skyphusion.org',
       ],
     },
   };
 }
 
 export function blogJsonLd(site: string) {
+  const origin = siteOrigin(site);
   return {
     '@context': 'https://schema.org',
     '@type': 'Blog',
     name: `${SITE_NAME} blog`,
-    url: `${site}/blog/`,
-    description: 'All posts on skyphusion.net',
+    url: `${origin}/blog/`,
+    description:
+      'Engineering posts on Vivijure, Postern, Prism, Cloudflare Workers, and self-hosted open source from Skyphusion Labs.',
     publisher: {
       '@type': 'Organization',
       name: SITE_NAME,
-      url: site,
+      url: `${origin}/`,
     },
   };
 }
 
 export function personJsonLd(site: string) {
+  const origin = siteOrigin(site);
   return {
     '@context': 'https://schema.org',
     '@type': 'Person',
     name: AUTHOR_NAME,
     email: AUTHOR_EMAIL,
-    url: `${site}/about/`,
+    url: `${origin}/about/`,
     description:
       'Conrad Rockenhaus builds open source AI and Cloudflare infrastructure. Public Michigan court record at rockenhaus.net.',
     sameAs: [...SOCIAL_PROFILES, ...PRODUCT_URLS],
@@ -205,11 +221,12 @@ export function personJsonLd(site: string) {
 }
 
 export function projectsJsonLd(site: string, projects: { name: string; description: string; repo: string }[]) {
+  const origin = siteOrigin(site);
   return {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
     name: 'Open source projects',
-    url: `${site}/projects/`,
+    url: `${origin}/projects/`,
     itemListElement: projects.map((project, index) => ({
       '@type': 'ListItem',
       position: index + 1,

@@ -1,20 +1,21 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { PROJECTS } from '../lib/projects';
-import { breadcrumbJsonLd, projectsJsonLd, tagPath } from '../lib/seo';
+import { breadcrumbJsonLd, projectsJsonLd, siteOrigin, tagPath } from '../lib/seo';
 
 const site = Astro.site?.href ?? 'https://skyphusion.net';
+const origin = siteOrigin(site);
 const jsonLd = [
   projectsJsonLd(site, PROJECTS),
   breadcrumbJsonLd([
-    { name: 'Home', url: site },
-    { name: 'Projects', url: `${site}/projects/` },
+    { name: 'Home', url: `${origin}/` },
+    { name: 'Projects', url: `${origin}/projects/` },
   ]),
 ];
 ---
 <BaseLayout
-  title="Projects, skyphusion.net"
-  description="Open source projects from skyphusion: multimodal AI, film studio, Discord assistants, OSINT tooling, federated MUD, and searchable email on Cloudflare Workers."
+  title="Open source projects from Skyphusion Labs"
+  description="Vivijure AI film studio, Postern agent mailbox, Prism multimodal AI, security-audit, search-mcp, Hollow Grid, and more free AGPL tools from Skyphusion Labs."
   jsonLd={jsonLd}
 >
   <h1>Projects</h1>
