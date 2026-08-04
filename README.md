@@ -82,11 +82,13 @@ One deferred script in `BaseLayout.astro` points at self-hosted Umami (`analytic
 
 ### SEO and feeds
 
-- **Canonical host:** `skyphusion.net` (`www` 301s in middleware).
+- **Canonical host:** `skyphusion.net`. `www.skyphusion.net` 301s to apex via Cloudflare Dynamic Redirect (desired state: `fleet-chezmoi/system/cloudflare/host-redirects/`). Middleware still mirrors the redirect for non-static paths.
 - **JSON-LD:** `WebSite` on home, `BlogPosting` + `BreadcrumbList` on posts, blog index schema on `/blog/`.
 - **Open Graph / Twitter:** per-page title, description, default OG image (`/og-default.png` in `seo.ts`; asset under `public/`).
 - **RSS:** all non-draft posts via `@astrojs/rss`.
-- **Sitemap:** `@astrojs/sitemap` with `lastmod` from frontmatter via `scripts/post-lastmod.mjs`.
+- **Sitemap:** `@astrojs/sitemap` with `lastmod` from frontmatter via `scripts/post-lastmod.mjs` (`/sitemap-index.xml`).
+- **llms.txt:** `public/llms.txt` at `/llms.txt`.
+- **Google Search Console (operator):** add property `https://skyphusion.net/`, verify by DNS TXT or HTML file under `public/`, then submit `https://skyphusion.net/sitemap-index.xml`. Repeat for `https://skyphusion.org/` (`/sitemap.xml`) and `https://vivijure.com/` (`/sitemap.xml`) if not already claimed. Domain properties prefer DNS verification once per zone.
 
 ## Stack
 
