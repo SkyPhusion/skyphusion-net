@@ -11,9 +11,10 @@ export const PROJECTS: Project[] = [
   {
     name: 'Prism',
     description:
-      'Multimodal AI playground on Cloudflare Workers: 35 chat models, voice chat, RAG, projects, streaming, and durable video/music jobs via Workflows.',
+      'Multimodal AI playground on Cloudflare Workers: public signup with per-user AI Gateway BYOK, chat, voice, RAG, projects, streaming, and durable video/music jobs via Workflows.',
     repo: 'https://github.com/skyphusion-labs/prism',
-    post: '/blog/llm/',
+    demo: 'https://play.skyphusion.org',
+    post: '/blog/prism-public/',
     tags: ['cloudflare', 'ai', 'llm', 'rag', 'workflows'],
   },
   {
@@ -118,9 +119,10 @@ export const PROJECTS: Project[] = [
   {
     name: 'Postern',
     description:
-      'Self-hostable mailbox on Cloudflare: send and receive, searchable storage, webmail and IMAP, plus a Go SMTP relay for legacy callers.',
+      'Self-hostable mailbox on Cloudflare: send and receive, searchable storage, webmail and IMAP, plus a Go SMTP relay for legacy callers. Identity-bound credentials so agents send and read as themselves.',
     repo: 'https://github.com/skyphusion-labs/postern',
-    post: '/blog/postern/',
+    demo: 'https://demo.posternonline.com',
+    post: '/blog/postern-identity-bound/',
     tags: ['cloudflare', 'email', 'smtp', 'go'],
   },
 ];
