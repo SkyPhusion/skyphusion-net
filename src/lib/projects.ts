@@ -119,10 +119,34 @@ export const PROJECTS: Project[] = [
   {
     name: 'Postern',
     description:
-      'Self-hostable mailbox on Cloudflare: send and receive, searchable storage, webmail and IMAP, plus a Go SMTP relay for legacy callers. Identity-bound credentials so agents send and read as themselves.',
+      'Self-hostable mailbox on Cloudflare: send and receive, searchable storage, webmail and IMAP, plus a Go SMTP relay for legacy callers. Identity-bound credentials so agents send and read as themselves (v1.4.1).',
     repo: 'https://github.com/skyphusion-labs/postern',
-    demo: 'https://demo.posternonline.com',
+    demo: 'https://demo.posternonline.com/webmail',
     post: '/blog/postern-identity-bound/',
     tags: ['cloudflare', 'email', 'smtp', 'go'],
+  },
+  {
+    name: 'security-audit',
+    description:
+      'Adversarial LLM security audits for GitHub PRs and repos via Cloudflare Workers AI and AI Gateway. Advisory CI layer with secret redaction and a public/private data boundary.',
+    repo: 'https://github.com/skyphusion-labs/security-audit',
+    post: '/blog/security-audit/',
+    tags: ['cloudflare', 'ai', 'side-project'],
+  },
+  {
+    name: 'search-mcp',
+    description:
+      'Cloudflare AI Search toolkit: MCP server, streaming /ask Worker, embeddable ask widget, and git-to-R2 corpus sync for docs and public code.',
+    repo: 'https://github.com/skyphusion-labs/search-mcp',
+    demo: 'https://skyphusion.net/search/',
+    tags: ['cloudflare', 'ai', 'mcp', 'rag'],
+  },
+  {
+    name: 'vivijure-local',
+    description:
+      'Self-hosted Vivijure control panel: Node, SQLite, S3/MinIO, Docker Compose. Same studio API as vivijure-cf without a Cloudflare account.',
+    repo: 'https://github.com/skyphusion-labs/vivijure-local',
+    post: '/blog/vivijure-run-anywhere/',
+    tags: ['vivijure', 'docker', 'self-hosted', 'homelab'],
   },
 ];

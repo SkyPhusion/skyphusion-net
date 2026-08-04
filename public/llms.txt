@@ -1,0 +1,22 @@
+# skyphusion.net
+
+> Engineering blog by Conrad Rockenhaus / Skyphusion Labs.
+
+## Primary products
+- Vivijure (self-hosted AI film studio): https://vivijure.com
+- Postern (mailbox for humans and agents): https://github.com/skyphusion-labs/postern
+- Prism (multimodal AI playground): https://play.skyphusion.org
+- Lab hub: https://skyphusion.org
+- Org code: https://github.com/skyphusion-labs
+
+## Key posts
+- Postern v1.4.1 identity-bound credentials: https://skyphusion.net/blog/postern-identity-bound/
+- Prism public signup / BYOK: https://skyphusion.net/blog/prism-public/
+- security-audit adversarial CI gate: https://skyphusion.net/blog/security-audit/
+- Vivijure runs anywhere: https://skyphusion.net/blog/vivijure-run-anywhere/
+- Vivijure constellation: https://skyphusion.net/blog/vivijure-constellation/
+
+## Optional
+- RSS: https://skyphusion.net/rss.xml
+- Projects index: https://skyphusion.net/projects/
+- Search: https://skyphusion.net/search/
