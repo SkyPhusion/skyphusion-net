@@ -3,9 +3,12 @@
 	"compatibility_flags": ["global_fetch_strictly_public"],
 	"name": "skyphusion-net",
 	"main": "@astrojs/cloudflare/entrypoints/server",
+	// run_worker_first so www -> apex middleware runs before ASSETS answers
+	// (same class of bug as skyphusion-org before the same flag).
 	"assets": {
 		"directory": "./dist",
-		"binding": "ASSETS"
+		"binding": "ASSETS",
+		"run_worker_first": true
 	},
 	"observability": {
 		"enabled": true
