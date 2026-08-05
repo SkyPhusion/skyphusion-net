@@ -109,6 +109,41 @@ export const PROJECTS: Project[] = [
     tags: ['cloudflare', 'durable-objects', 'mud', 'federation'],
   },
   {
+    name: 'hollow-grid-go',
+    description:
+      'Rust Choir: Go world-server port of The Hollow Grid. Same smoke suite and wire protocol, fleet-hosted at rustchoir.skyphusion.org.',
+    repo: 'https://github.com/skyphusion-labs/hollow-grid-go',
+    demo: 'https://rustchoir.skyphusion.org',
+    post: '/blog/hollow-grid-ports/',
+    tags: ['go', 'mud', 'federation', 'websockets'],
+  },
+  {
+    name: 'hollow-grid-py',
+    description:
+      'Verdigris Spool: Python world-server port of The Hollow Grid. Conformance-green on the shared smoke suite; live at verdigris.skyphusion.org.',
+    repo: 'https://github.com/skyphusion-labs/hollow-grid-py',
+    demo: 'https://verdigris.skyphusion.org',
+    post: '/blog/hollow-grid-ports/',
+    tags: ['python', 'mud', 'federation', 'websockets'],
+  },
+  {
+    name: 'hollow-grid-c',
+    description:
+      'Ferrite Wastes: C world-server port of The Hollow Grid on bare metal, same hub federation contract as the TypeScript and language ports.',
+    repo: 'https://github.com/skyphusion-labs/hollow-grid-c',
+    demo: 'https://ferrite.skyphusion.org',
+    post: '/blog/hollow-grid-ports/',
+    tags: ['c', 'mud', 'federation'],
+  },
+  {
+    name: 'hollow-grid-asm',
+    description:
+      'Basalt Relay: x86-64 NASM world-server port of The Hollow Grid. Protocol-first; image builds gated until the NASM 3 / PIE path is clean.',
+    repo: 'https://github.com/skyphusion-labs/hollow-grid-asm',
+    post: '/blog/hollow-grid-ports/',
+    tags: ['assembly', 'mud', 'federation'],
+  },
+  {
     name: 'mud-bots',
     description:
       'AI inhabitants for The Hollow Grid: open-source models on Workers AI log in like human players, face the game\'s real moral choices, and double as live QA.',
