@@ -15,6 +15,7 @@
 - security-audit adversarial CI gate: https://skyphusion.net/blog/security-audit/
 - Vivijure runs anywhere: https://skyphusion.net/blog/vivijure-run-anywhere/
 - Vivijure constellation: https://skyphusion.net/blog/vivijure-constellation/
+- Hollow Grid language ports (Go/Python and more): https://skyphusion.net/blog/hollow-grid-ports/
 
 ## Optional
 - RSS: https://skyphusion.net/rss.xml
