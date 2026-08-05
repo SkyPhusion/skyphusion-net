@@ -4,10 +4,12 @@ Guidance for Claude Code (and the crew) working in this repo.
 
 ## What this is
 
-Personal blog at **skyphusion.net** -- an Astro 7 site, markdown-authored, prerendered to static HTML
-and served from a Cloudflare Worker (the `@astrojs/cloudflare` adapter). Content is a single `blog`
-content collection; everything renders from markdown. Currently **v0.2.0**. Live: skyphusion.net /
-www.skyphusion.net.
+Personal **blog** at **skyphusion.net** -- an **Astro** site, markdown-authored, prerendered to
+static HTML and served from a Cloudflare Worker (the `@astrojs/cloudflare` adapter). Content is a
+single `blog` content collection; everything renders from markdown. Also ships a **projects hub**
+(`src/pages/projects.astro` + `src/lib/projects.ts`). Currently **v0.2.0**. Live: skyphusion.net /
+www.skyphusion.net. Deploy: `npm run deploy` (build + wrangler; account from
+`CLOUDFLARE_ACCOUNT_ID`). Detail: CI workflows under `.github/workflows/`.
 
 ## Commands
 
@@ -97,8 +99,8 @@ not in listings or RSS).
 - Crew commits land under the member's own `skyphusion-<member>` identity, never Conrad's. (Conrad
   devs ONLY on his laptop, where his commits author as `Conrad Rockenhaus <conrad@skyphusion.org>`
   -- his real name kept, the in-house `@skyphusion.org` email; his name is never scrubbed and his
-  history never rewritten. On the crew host the `conrad` user is the god process and commits as
-  `Mackaye <mackaye@skyphusion.org>`.)
+  history never rewritten. On the crew host the **`mackaye`** user is the god process and commits as
+  `Mackaye <mackaye@skyphusion.org>`; `conrad` is break-glass only.)
 - Cross-project operating context lives in the main auto-memory
   (`~/.claude/projects/-home-conrad/memory/`); load it before acting.
 
