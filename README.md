@@ -21,8 +21,8 @@ Engineering blog of [Conrad Rockenhaus](https://github.com/skyphusion) at **http
 | Content Signals robots policy | **Installed** | `public/robots.txt` |
 | CI: typecheck + Vitest + deploy on `main` | **Installed** | `.github/workflows/ci.yml` |
 | Corpus notify → AI Search reindex | **Installed** | `.github/workflows/corpus-notify.yml` |
-| Cloudflare Web Analytics (dashboard snippet) | **Not installed** | — |
-| Newsletter (Buttondown, Resend, etc.) | **Not installed** | — |
+| Cloudflare Web Analytics (dashboard snippet) | **Not installed** | -- |
+| Newsletter (Buttondown, Resend, etc.) | **Not installed** | -- |
 | Pagefind / client-side static index | **Not used** | Search is AI Search via search-mcp |
 
 Monthly infra cost for the site itself: **$0** on Cloudflare Workers free tier. Search and analytics run on separate Skyphusion services (also $0 at current scale).
