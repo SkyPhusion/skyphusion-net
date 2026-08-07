@@ -11,11 +11,45 @@ export const PROJECTS: Project[] = [
   {
     name: 'Prism',
     description:
-      'Multimodal AI playground on Cloudflare Workers: public signup with per-user AI Gateway BYOK, chat, voice, RAG, projects, streaming, and durable video/music jobs via Workflows.',
+      'Multimodal AI playground on Cloudflare Workers (1.0): public signup with per-user AI Gateway BYOK, ~93 models, chat, voice, RAG, projects, compact, streaming, and durable video/music jobs via Workflows.',
     repo: 'https://github.com/skyphusion-labs/prism',
     demo: 'https://play.skyphusion.org',
-    post: '/blog/prism-public/',
+    post: '/blog/prism-v1/',
     tags: ['cloudflare', 'ai', 'llm', 'rag', 'workflows'],
+  },
+  {
+    name: 'Prism control plane',
+    description:
+      'Metered commercial plane for Prism: enroll, plan entitlements, prepaid balance, rate limits, and OpenAI-shaped doors. Does not store prompts. Native iOS/Android talk here.',
+    repo: 'https://github.com/skyphusion-labs/prism-control-plane',
+    demo: 'https://play-proxy.skyphusion.org',
+    post: '/blog/prism-v1/',
+    tags: ['cloudflare', 'ai', 'llm'],
+  },
+  {
+    name: 'Prism for iOS',
+    description:
+      'Native iOS client for Prism against the control plane: chat, image, video, audio, music, StoreKit credit packs.',
+    repo: 'https://github.com/skyphusion-labs/prism-ios',
+    post: '/blog/prism-v1/',
+    tags: ['cloudflare', 'ai', 'llm', 'ios'],
+  },
+  {
+    name: 'Prism for Android',
+    description:
+      'Native Android client for Prism against the control plane: same commercial contract as iOS.',
+    repo: 'https://github.com/skyphusion-labs/prism-android',
+    post: '/blog/prism-v1/',
+    tags: ['cloudflare', 'ai', 'llm', 'android'],
+  },
+  {
+    name: 'prism-mcp',
+    description:
+      'MIT MCP door for the Prism playground: agents get full HTTP /api/* parity (chat, multimodal, RAG, compact, jobs). Session cookie stays on the Worker.',
+    repo: 'https://github.com/skyphusion-labs/prism-mcp',
+    demo: 'https://prism-mcp.skyphusion.org',
+    post: '/blog/prism-v1/',
+    tags: ['cloudflare', 'ai', 'llm', 'mcp'],
   },
   {
     name: 'Vivijure',

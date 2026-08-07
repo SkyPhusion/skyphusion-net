@@ -5,11 +5,15 @@
 ## Primary products
 - Vivijure (self-hosted AI film studio): https://vivijure.com
 - Postern (mailbox for humans and agents): https://github.com/skyphusion-labs/postern
-- Prism (multimodal AI playground): https://play.skyphusion.org
+- Prism (multimodal AI playground, 1.0 line): https://play.skyphusion.org
+- Prism control plane: https://play-proxy.skyphusion.org · https://github.com/skyphusion-labs/prism-control-plane
+- Prism MCP (agents): https://prism-mcp.skyphusion.org · https://github.com/skyphusion-labs/prism-mcp
+- Prism iOS / Android: https://github.com/skyphusion-labs/prism-ios · https://github.com/skyphusion-labs/prism-android
 - Lab hub: https://skyphusion.org
 - Org code: https://github.com/skyphusion-labs
 
 ## Key posts
+- Prism 1.0 product line: https://skyphusion.net/blog/prism-v1/
 - Postern v1.4.1 identity-bound credentials: https://skyphusion.net/blog/postern-identity-bound/
 - Prism public signup / BYOK: https://skyphusion.net/blog/prism-public/
 - security-audit adversarial CI gate: https://skyphusion.net/blog/security-audit/

@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- **docs(blog):** Prism 1.0 product-line post (`/blog/prism-v1/`); projects hub entries for control plane, iOS, Android, prism-mcp; llms.txt + prism-public forward link.
+
 ## v0.2.2
 
 - **docs(projects):** list hollow-grid-go / py / c / asm on the projects hub with demos and the ports post.
