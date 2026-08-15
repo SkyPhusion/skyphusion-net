@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- **fix(blog):** publish the retired `cf-email-relay` post at its original slug. The declared middleware 301 never ran: the live deploy is assets-only (`serve_directly`, no Worker script), so old inbound links 404ed. This changes published content (the write-up returns with its retirement banner) rather than adding `run_worker_first`.
+
 - **fix(deps):** npm overrides for Dependabot: `undici@7.29.0`, `fast-uri@3.1.5`, plus `js-yaml@4.3.1` / `yaml@2.9.0` (dev/tooling via wrangler/miniflare and @astrojs/check).
 
 - **docs(blog):** Prism 1.0 product-line post (`/blog/prism-v1/`); projects hub entries for control plane, iOS, Android, prism-mcp; llms.txt + prism-public forward link.

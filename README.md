@@ -16,8 +16,8 @@ Engineering blog of [Conrad Rockenhaus](https://github.com/skyphusion) at **http
 | Giscus comments | **Installed** | `src/components/Giscus.astro`, `src/config/giscus.ts` |
 | Umami analytics (self-hosted, cookieless) | **Installed** | `BaseLayout.astro` → `analytics.skyphusion.org` |
 | AI Search ask widget | **Installed** | `/search/`, `public/ask-widget.{js,css}` |
-| `www` → apex redirect | **Installed** | `src/middleware.ts` |
-| Legacy slug redirect (`cf-email-relay` → `postern`) | **Installed** | `src/middleware.ts` |
+| `www` → apex redirect | **Installed** | Edge Dynamic Redirect; `src/middleware.ts` is a fallback for non-static paths only |
+| Retired `cf-email-relay` post | **Installed** | `src/content/blog/cf-email-relay.md` (banner points at Postern). Not a 301: the live deploy is assets-only, so Worker middleware never runs. |
 | Content Signals robots policy | **Installed** | `public/robots.txt` |
 | CI: typecheck + Vitest + deploy on `main` | **Installed** | `.github/workflows/ci.yml` |
 | Corpus notify → AI Search reindex | **Installed** | `.github/workflows/corpus-notify.yml` |
@@ -189,7 +189,7 @@ skyphusion-net/
 │   ├── components/               # Giscus, RelatedPosts
 │   ├── layouts/                # BaseLayout, AboutLayout
 │   ├── lib/                    # seo.ts, projects.ts, posts.ts
-│   ├── middleware.ts             # www redirect, legacy slug redirect
+│   ├── middleware.ts             # www fallback only; does not run on prerendered HTML
 │   └── pages/                    # routes (see table above)
 └── .github/workflows/            # CI, deploy, corpus-notify, coverage
 ```
