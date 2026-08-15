@@ -56,8 +56,9 @@ system.
   Turnstile gate; blog Origin gets a blog-tuned system prompt on the Worker. This repo is in the
   search-mcp corpus (`SKYPHUSION_TARGETS_JSON`); `.github/workflows/corpus-notify.yml` dispatches
   `corpus-sync` on merge to `main` so public and internal indexes refresh.
-- **Middleware** (`src/middleware.ts`): `www.skyphusion.net` → apex 301; `/blog/cf-email-relay` →
-  `/blog/postern/` 301.
+- **Middleware** (`src/middleware.ts`): `www.skyphusion.net` → apex 301 fallback. Fully static
+  Workers Assets deploys do not run this for prerendered HTML (the live Worker has no script). The
+  retired `cf-email-relay` post is published at its original slug with a banner, not redirected.
 - **Related posts**: `src/lib/posts.ts` scores tag overlap; used on `[...slug].astro`.
 - **Feeds + SEO**: `src/pages/rss.xml.js` builds RSS from the same collection; `@astrojs/sitemap`
   auto-generates the sitemap at build, with per-post `lastmod` injected from frontmatter via
